@@ -1,8 +1,10 @@
+import 'package:couters/about.dart';
 import 'package:couters/buttonlayout.dart';
-import 'package:couters/buttonlayouts.dart';
 import 'package:couters/centerlayout.dart';
 import 'package:couters/containerlayout.dart';
 import 'package:couters/expandedlayout.dart';
+import 'package:couters/pages/home.dart';
+import 'package:couters/pages/setting.dart';
 import 'package:couters/rowlayout.dart';
 import 'package:couters/stacklayout.dart';
 import 'package:flutter/material.dart';
@@ -22,7 +24,14 @@ class MyApp extends StatelessWidget {
     title: 'Flutter IT',
     theme: ThemeData(
       primarySwatch: Colors.purple ),
-      home: MymunuPage(),
+     // home: Home(),
+      //เริ่มต้นจะเข้าสู่หน้าเมนู
+    initialRoute: '/',
+    routes: {
+      '/' :(context)=>MenuButtonPage(),
+      '/about':(context)=>About(),
+      '/setting':(context)=>Setting()
+    },
     );
   }
 }

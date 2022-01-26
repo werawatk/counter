@@ -1,3 +1,4 @@
+import 'package:couters/component/reusebox.dart';
 import 'package:flutter/material.dart';
 
 class MenuButtonPage extends StatefulWidget {
@@ -19,38 +20,36 @@ class _MenuButtonPageState extends State<MenuButtonPage> {
             Expanded(
               child: Row(
                 children: <Widget> [
-                  Expanded(
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Container(
-                        color: Colors.blue[700],
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: <Widget> [
-                            Icon(Icons.home,size: 30, color: Colors.white),
-                            SizedBox(height: 30),
-                            Text('Home', style: TextStyle(fontSize: 20, color: Colors.white),)
-                          ]
-                        ),
-                      ),
-                    ),
-                  ),
-                   Expanded(
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Container(
-                        color: Colors.green[700],
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: <Widget> [
-                            Icon(Icons.info,size: 30, color: Colors.white),
-                            SizedBox(height: 30),
-                            Text('ABOUT', style: TextStyle(fontSize: 20, color: Colors.white),)
-                          ]
-                        ),
-                      ),
-                    ),
-                  ),
+                ReUseBox(
+                  color : Colors.blue ,
+                  icon: Icons.home,
+                  txtMenu:('Home') ,
+                  onPress: (){print('แสดงปุ่ม Home');},),
+                ReUseBox(
+                  color : Colors.orange ,
+                  icon: Icons.info,
+                  txtMenu:('About') ,
+                  onPress: (){print('แสดงปุ่ม About');},
+                )                  
+                ],
+              )
+            ),
+
+            Expanded(
+              child: Row(
+                children: <Widget> [
+                 ReUseBox(
+                  color : Colors.red ,
+                  icon: Icons.settings,
+                  txtMenu:('Setting') ,
+                  onPress: (){print('แสดงปุ่ม Setting');},
+                 ),
+                 ReUseBox(
+                  color : Colors.pink ,
+                  icon: Icons.cake,
+                  txtMenu:('Product') ,
+                  onPress: (){print('แสดงปุ่ม Product');},
+                 ),
                   
                 ],
               )
@@ -59,84 +58,24 @@ class _MenuButtonPageState extends State<MenuButtonPage> {
             Expanded(
               child: Row(
                 children: <Widget> [
-                  Expanded(
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Container(
-                        color: Colors.teal[700],
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: <Widget> [
-                            Icon(Icons.alarm,size: 30, color: Colors.white),
-                            SizedBox(height: 30),
-                            Text('TIME', style: TextStyle(fontSize: 20, color: Colors.white),)
-                          ]
-                        ),
-                      ),
-                    ),
+                  ReUseBox(
+                  color : Colors.green ,
+                  icon: Icons.contact_mail,
+                  txtMenu:('Contact') , 
+                  onPress: (){print('แสดงปุ่ม Contact');}, 
                   ),
-                   Expanded(
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Container(
-                        color: Colors.orange[700],
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: <Widget> [
-                            Icon(Icons.account_box, size: 30, color: Colors.white),
-                            SizedBox(height: 30),
-                            Text('PRODUCT', style: TextStyle(fontSize: 20, color: Colors.white),)
-                          ]
-                        ),
-                      ),
-                    ),
-                  ),
-                  
-                ],
-              )
-            ),
-
-            Expanded(
-              child: Row(
-                children: <Widget> [
-                  Expanded(
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Container(
-                        color: Colors.yellow[700],
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: <Widget> [
-                            Icon(Icons.settings,size: 30, color: Colors.white),
-                            SizedBox(height: 30),
-                            Text('SETTINGS', style: TextStyle(fontSize: 20, color: Colors.white),)
-                          ]
-                        ),
-                      ),
-                    ),
-                  ),
-                   Expanded(
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Container(
-                        color: Colors.red[700],
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: <Widget> [
-                            Icon(Icons.arrow_forward,size: 30, color: Colors.white),
-                            SizedBox(height: 30),
-                            Text('EXIT', style: TextStyle(fontSize: 20, color: Colors.white),)
-                          ]
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
-              )
-            )
+                  ReUseBox(
+                  color : Colors.purple ,
+                  icon: Icons.arrow_forward,
+                  txtMenu:('Exit') ,
+                  onPress: (){print('แสดงปุ่ม Exit');},  
+                  )
           ]
         ),
       ),
-    );
+     ], 
+    ),
+  ),
+ );
   }
 }
